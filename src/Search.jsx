@@ -12,17 +12,22 @@ class Search extends React.Component {
 	}
 
 	updateQuery(event) {
-		console.log(event.key)
+
 		this.setState({query: event.target.value})
 	}
 	submitQuery(event) {
 
+		if(event.key == "Enter"){
+
+		} else {
+			this.updateQuery(event)
+		}
 	}
 	render(){
   		return (
   			<div>
     			<p>Search</p>
-    			<input type = "text" onChange={this.updateQuery}/>
+    			<input type = "text" onKeyDown={this.submitQuery}/>
   			</div>
 		);
 	}

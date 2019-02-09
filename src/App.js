@@ -5,7 +5,7 @@ import Search from './Search.jsx';
 const App = () => {
   return (
     <div>
-      <p>React here!</p>
+      <p>Catch the Cup</p>
       <Search />
     </div>
   );
