@@ -23,12 +23,17 @@ class Search extends React.Component {
 	}
 
 	updateQuery(value) {
-		console.log(value)
-		this.setState({query: value})}
+
+		this.setState({query: value})
 	}
 	submitQuery(event) {
 
 		if(event.key == "Enter"){
+			for(let i = 0; i < 31; i++) {
+				if(this.state.teams[i].name.toLowerCase().includes(this.state.query.toLowerCase())){
+					console.log(this.state.teams[i])
+				}
+			}
 		} else {
 			this.updateQuery(event.target.value)
 		}
@@ -37,7 +42,7 @@ class Search extends React.Component {
   		return (
   			<div>
     			<p>Search</p>
-    			<input type = "text" onKeyDown={this.submitQuery}/>
+    			<input type = "text" onKeyUp={this.submitQuery}/>
   			</div>
 		);
 	}
